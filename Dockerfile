@@ -33,6 +33,13 @@ RUN useradd \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
   && mkdir /var/lib/apt/lists/partial
+  
+RUN wget -O foo2zjs.tar.gz http://foo2zjs.rkkda.com/foo2zjs.tar.gz
+  && tar xvf foo2zjs.tar.gz
+  && cd foo2zjs
+  && make
+  && ./getweb 1020
+  && make install install-hotplug cups
 
 COPY etc-cups/cupsd.conf /etc/cups/cupsd.conf
 EXPOSE 631
