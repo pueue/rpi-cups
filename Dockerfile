@@ -4,8 +4,7 @@ MAINTAINER Sangwon Kim <dev@pueue.com>
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && apt-get install -y \
-  gcc \
-  make \
+  build-essential \
   groff \
   vim \
   sudo \
