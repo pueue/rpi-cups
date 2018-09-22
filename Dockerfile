@@ -43,6 +43,7 @@ RUN wget -O foo2zjs.tar.gz http://foo2zjs.rkkda.com/foo2zjs.tar.gz \
   && cd foo2zjs \
   && make \
   && ./getweb 1020 \
+  && make install \
   && make install install-hotplug cups
 
 COPY etc-cups/cupsd.conf /etc/cups/cupsd.conf
