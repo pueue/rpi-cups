@@ -1,5 +1,5 @@
 FROM resin/rpi-raspbian
-MAINTAINER Ammon Sarver <manofarms@gmail.com>
+MAINTAINER Sangwon Kim <dev@pueue.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 
