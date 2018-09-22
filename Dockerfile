@@ -4,6 +4,8 @@ MAINTAINER Ammon Sarver <manofarms@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && apt-get install -y \
+  gcc \
+  make \
   sudo \
   locales \
   whois \
@@ -34,11 +36,11 @@ RUN useradd \
   && rm -rf /var/lib/apt/lists/* \
   && mkdir /var/lib/apt/lists/partial
   
-RUN wget -O foo2zjs.tar.gz http://foo2zjs.rkkda.com/foo2zjs.tar.gz
-  && tar xvf foo2zjs.tar.gz
-  && cd foo2zjs
-  && make
-  && ./getweb 1020
+RUN wget -O foo2zjs.tar.gz http://foo2zjs.rkkda.com/foo2zjs.tar.gz \
+  && tar xvf foo2zjs.tar.gz \
+  && cd foo2zjs \
+  && make \
+  && ./getweb 1020 \
   && make install install-hotplug cups
 
 COPY etc-cups/cupsd.conf /etc/cups/cupsd.conf
